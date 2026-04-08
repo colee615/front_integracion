@@ -1598,11 +1598,37 @@ a {
   background:
     radial-gradient(circle at top right, rgba(255, 255, 255, 0.08), transparent 28%),
     linear-gradient(135deg, #09090b 0%, #0f172a 48%, #134e4a 100%);
+  box-shadow: 0 24px 44px rgba(0, 0, 0, 0.22);
+}
+
+.portal-dark .hero-kicker {
+  color: #93c5fd;
+}
+
+.portal-dark .hero-title {
+  color: #f8fafc;
+}
+
+.portal-dark .hero-description {
+  color: rgba(226, 232, 240, 0.82);
 }
 
 .portal-dark .hero-stat-card {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.portal-dark .hero-stat-label {
+  color: rgba(191, 219, 254, 0.72);
+}
+
+.portal-dark .hero-stat-value {
+  color: #f8fafc;
+}
+
+.portal-dark .hero-stat-value-small {
+  color: #e2e8f0;
 }
 
 .portal-dark .portal-field label {
