@@ -120,6 +120,103 @@
         </div>
       </main>
     </div>
+
+    <div v-if="isHelpModalOpen" class="portal-modal-backdrop portal-help-backdrop" @click.self="closeHelpModal">
+      <div class="portal-modal-card portal-help-modal">
+        <div class="portal-modal-header">
+          <div>
+            <div class="portal-help-kicker">{{ $portalT('enterprise_visibility', {}, currentLocale) }}</div>
+            <div class="panel-title portal-help-title">{{ companyName }}</div>
+            <div class="portal-modal-subtitle">
+              {{ $portalT('help_message', {}, currentLocale) }}
+            </div>
+          </div>
+          <button
+            class="portal-modal-close"
+            type="button"
+            :aria-label="$portalT('close_modal', {}, currentLocale)"
+            @click="closeHelpModal"
+          >
+            x
+          </button>
+        </div>
+
+        <div class="portal-help-grid">
+          <section class="portal-help-hero">
+            <div class="portal-help-badge">
+              <span class="portal-help-badge-label">{{ $portalT('company_status', {}, currentLocale) }}</span>
+              <strong>{{ translatedCompanyStatus }}</strong>
+            </div>
+
+            <div class="portal-help-copy">
+              <h3>{{ company.name || companyName }}</h3>
+              <p>
+                {{ company.contact_name || user.name || userName || $portalT('no_data', {}, currentLocale) }}
+              </p>
+            </div>
+
+            <div class="portal-help-points">
+              <div class="portal-help-point">
+                <span>{{ $portalT('company_slug', {}, currentLocale) }}</span>
+                <strong>{{ company.slug || $portalT('no_data', {}, currentLocale) }}</strong>
+              </div>
+              <div class="portal-help-point">
+                <span>{{ $portalT('technical_email', {}, currentLocale) }}</span>
+                <strong>{{ company.contact_email || user.email || $portalT('no_data', {}, currentLocale) }}</strong>
+              </div>
+              <div class="portal-help-point">
+                <span>{{ $portalT('company_phone', {}, currentLocale) }}</span>
+                <strong>{{ company.contact_phone || $portalT('no_data', {}, currentLocale) }}</strong>
+              </div>
+            </div>
+          </section>
+
+          <section class="portal-help-details">
+            <div class="portal-help-card">
+              <div class="portal-help-card-title">{{ $portalT('profile_company', {}, currentLocale) }}</div>
+              <div class="detail-list">
+                <div>
+                  <div class="detail-item-label">{{ $portalT('company_name', {}, currentLocale) }}</div>
+                  <div class="detail-item-value">{{ company.name || companyName }}</div>
+                </div>
+                <div>
+                  <div class="detail-item-label">{{ $portalT('company_contact', {}, currentLocale) }}</div>
+                  <div class="detail-item-value">{{ company.contact_name || $portalT('no_data', {}, currentLocale) }}</div>
+                </div>
+                <div>
+                  <div class="detail-item-label">{{ $portalT('company_contact_email', {}, currentLocale) }}</div>
+                  <div class="detail-item-value">{{ company.contact_email || $portalT('no_data', {}, currentLocale) }}</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="portal-help-card">
+              <div class="portal-help-card-title">{{ $portalT('profile_user', {}, currentLocale) }}</div>
+              <div class="detail-list">
+                <div>
+                  <div class="detail-item-label">{{ $portalT('name', {}, currentLocale) }}</div>
+                  <div class="detail-item-value">{{ user.name || userName }}</div>
+                </div>
+                <div>
+                  <div class="detail-item-label">{{ $portalT('email', {}, currentLocale) }}</div>
+                  <div class="detail-item-value">{{ user.email || $portalT('no_data', {}, currentLocale) }}</div>
+                </div>
+                <div>
+                  <div class="detail-item-label">{{ $portalT('role', {}, currentLocale) }}</div>
+                  <div class="detail-item-value">{{ $portalT('company_role', {}, currentLocale) }}</div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="integration-modal-footer">
+          <button class="portal-button portal-help-button" type="button" @click="closeHelpModal">
+            {{ $portalT('close_modal', {}, currentLocale) }}
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -143,7 +240,8 @@ export default {
       isMobile: false,
       isDarkMode: true,
       isUserMenuOpen: false,
-      isLoggingOut: false
+      isLoggingOut: false,
+      isHelpModalOpen: false
     }
   },
   computed: {
@@ -158,9 +256,32 @@ export default {
     currentLocale() {
       return this.$store.state.company?.locale || 'es'
     },
+    user() {
+      return this.$store.state.user || {}
+    },
+    company() {
+      return this.$store.state.company || {}
+    },
     companyStatus() {
       const status = this.$store.state.company?.status
       return status === 'active' ? 'Active' : (status || 'Pending')
+    },
+    translatedCompanyStatus() {
+      const map = {
+        active: 'status_active',
+        activo: 'status_active',
+        programmed: 'status_programmed',
+        programado: 'status_programmed',
+        expired: 'status_expired',
+        expirado: 'status_expired',
+        revoked: 'status_revoked',
+        revocado: 'status_revoked',
+        pending: 'step_status_pending',
+        pendiente: 'step_status_pending'
+      }
+
+      const normalizedStatus = String(this.company?.status || 'pending').toLowerCase()
+      return this.$portalT(map[normalizedStatus] || normalizedStatus, {}, this.currentLocale)
     },
     activeIntegrationText() {
       const activeTokens = this.$store.state.dashboard?.summary?.active_tokens || 0
@@ -267,7 +388,11 @@ export default {
       }
     },
     showHelp() {
-      window.alert(this.$portalT('help_message', {}, this.currentLocale))
+      this.isUserMenuOpen = false
+      this.isHelpModalOpen = true
+    },
+    closeHelpModal() {
+      this.isHelpModalOpen = false
     },
     async handleLogout() {
       if (this.isLoggingOut) {
