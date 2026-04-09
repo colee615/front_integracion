@@ -203,6 +203,10 @@ const messages = {
     origin: 'Origen',
     received_at: 'Recibido en sistema',
     last_update: 'Última actualización',
+    delivery_attempts: 'Intentos carteros',
+    last_delivery_attempt_at: 'Fecha y hora último intento',
+    last_delivery_attempt_location: 'Lugar último intento',
+    last_delivery_attempt_result: 'Resultado último intento',
     no_packages_received: 'Todavía no hay paquetes recibidos por API.',
     manifest_number: 'CN31',
     bag_number: 'Saca',
@@ -243,6 +247,7 @@ const messages = {
     no_bags_available: 'No hay sacas disponibles para este receptáculo.',
     select_package_to_view: 'Selecciona un paquete para ver su información completa.',
     movement_history: 'Historial de movimientos',
+    movement_datetime: 'Fecha / hora',
     dispatch_note: 'Nota de despacho',
     difference: 'Diferencia',
     recipient_document: 'Documento',
@@ -273,7 +278,8 @@ const messages = {
     status_customs_released: 'Liberado por aduana',
     status_out_for_delivery: 'En ruta de entrega',
     status_delivered: 'Entregado',
-    status_delivery_incident: 'Incidencia de entrega'
+    status_delivery_incident: 'Intentos carteros',
+    status_courier_attempts: 'Intentos carteros'
   },
   en: {
     brand: 'Correos de Bolivia',
@@ -479,6 +485,10 @@ const messages = {
     origin: 'Origin',
     received_at: 'Received in system',
     last_update: 'Last update',
+    delivery_attempts: 'Courier attempts',
+    last_delivery_attempt_at: 'Last attempt date / time',
+    last_delivery_attempt_location: 'Last attempt location',
+    last_delivery_attempt_result: 'Last attempt result',
     no_packages_received: 'There are no packages received through the API yet.',
     manifest_number: 'CN31',
     bag_number: 'Bag',
@@ -519,6 +529,7 @@ const messages = {
     no_bags_available: 'There are no bags available for this receptacle.',
     select_package_to_view: 'Select a package to view its full information.',
     movement_history: 'Movement history',
+    movement_datetime: 'Date / time',
     dispatch_note: 'Dispatch note',
     difference: 'Difference',
     recipient_document: 'Document',
@@ -549,7 +560,8 @@ const messages = {
     status_customs_released: 'Released by customs',
     status_out_for_delivery: 'Out for delivery',
     status_delivered: 'Delivered',
-    status_delivery_incident: 'Delivery incident'
+    status_delivery_incident: 'Courier attempts',
+    status_courier_attempts: 'Courier attempts'
   }
 }
 

@@ -143,6 +143,7 @@ export default {
         liberado_aduana: 'status_customs_released',
         en_ruta_entrega: 'status_out_for_delivery',
         entregado: 'status_delivered',
+        intentos_carteros: 'status_courier_attempts',
         incidencia_entrega: 'status_delivery_incident'
       }
 
