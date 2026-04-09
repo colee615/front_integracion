@@ -10,7 +10,7 @@
           </div>
         </div>
 
-        <h1>Iniciar sesion</h1>
+        <h1>Iniciar sesión</h1>
         <p class="login-intro">Ingresa con las credenciales asignadas para acceder a tu entorno empresarial.</p>
 
         <div v-if="errorMessage" class="portal-error">{{ errorMessage }}</div>
@@ -22,8 +22,8 @@
           </div>
 
           <div class="portal-field">
-            <label>Contrasena</label>
-            <input v-model="form.password" type="password" placeholder="Ingresa tu contrasena" required>
+            <label>Contraseña</label>
+            <input v-model="form.password" type="password" placeholder="Ingresa tu contraseña" required>
           </div>
 
           <button class="portal-button" type="submit" :disabled="loading">
@@ -32,7 +32,7 @@
         </form>
 
         <div class="portal-inline-note">
-          Acceso conectado al servicio de integracion mediante API segura.
+          Acceso conectado al servicio de integración mediante API segura.
         </div>
       </section>
     </div>
@@ -78,7 +78,7 @@ export default {
 
         this.$router.push('/panel')
       } catch (error) {
-        this.errorMessage = error.data?.message || error.message || 'No fue posible iniciar sesion.'
+        this.errorMessage = error.data?.message || error.message || 'No fue posible iniciar sesión.'
       } finally {
         this.loading = false
       }

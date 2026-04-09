@@ -103,7 +103,7 @@ export default {
     },
     formatDate(value) {
       if (!value) {
-        return 'Sin dato'
+        return this.t('no_data')
       }
 
       const date = new Date(value)

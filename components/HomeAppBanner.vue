@@ -5,7 +5,7 @@
         <div class="cb-app-icon" v-html="icons.phone"></div>
         <div>
           <h2>Nueva App de Correos de Bolivia</h2>
-          <p>Descargala ahora y gestiona tus envios desde tu movil con total comodidad</p>
+          <p>Descárgala ahora y gestiona tus envíos desde tu móvil con total comodidad</p>
         </div>
       </div>
 

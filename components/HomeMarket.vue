@@ -6,7 +6,7 @@
           <div class="cb-service-icon" v-html="icons.stamp"></div>
           <div>
             <h3>Correos Market / Filatelia</h3>
-            <p>Descubre nuestra coleccion exclusiva de sellos y souvenirs</p>
+            <p>Descubre nuestra colección exclusiva de sellos y recuerdos</p>
           </div>
         </div>
         <a href="#" class="cb-view-all">Ver todos -></a>
@@ -21,7 +21,7 @@
             <h4>{{ product.title }}</h4>
             <div class="cb-product-meta">
               <span>{{ product.price }}</span>
-              <button type="button" class="cb-cart-btn" aria-label="Anadir al carrito" v-html="icons.cart"></button>
+              <button type="button" class="cb-cart-btn" aria-label="Añadir al carrito" v-html="icons.cart"></button>
             </div>
           </div>
         </article>

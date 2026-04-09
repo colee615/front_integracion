@@ -5,10 +5,10 @@
         <div>
           <h4>Ayuda</h4>
           <a href="#">Preguntas Frecuentes</a>
-          <a href="#">Como Rastrear un Envio</a>
+          <a href="#">Cómo rastrear un envío</a>
           <a href="#">Tarifas y Servicios</a>
           <a href="#">Reclamos</a>
-          <a href="#">Terminos y Condiciones</a>
+          <a href="#">Términos y condiciones</a>
         </div>
 
         <div>
@@ -37,8 +37,8 @@
         </div>
 
         <div>
-          <h4>Siguenos</h4>
-          <p class="cb-footer-copy">Mantente conectado con nosotros en redes sociales</p>
+          <h4>Síguenos</h4>
+          <p class="cb-footer-copy">Mantente conectado con nosotros en las redes sociales</p>
           <div class="cb-socials">
             <a href="#" aria-label="Facebook">f</a>
             <a href="#" aria-label="Twitter">x</a>
@@ -54,7 +54,7 @@
         </a>
         <div class="cb-copyright">
           <p>© 2026 Correos de Bolivia. Todos los derechos reservados.</p>
-          <p>Empresa Publica Nacional Estrategica</p>
+          <p>Empresa Pública Nacional Estratégica</p>
         </div>
       </div>
     </div>

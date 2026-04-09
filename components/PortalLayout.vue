@@ -42,7 +42,7 @@
       v-if="isMobileSidebarOpen"
       class="portal-sidebar-overlay"
       type="button"
-      aria-label="Cerrar menu lateral"
+      aria-label="Cerrar menú lateral"
       @click="closeMobileSidebar"
     />
 
@@ -53,7 +53,7 @@
             class="topbar-action"
             type="button"
             :aria-expanded="String(isMobile ? isMobileSidebarOpen : !isSidebarCollapsed)"
-            aria-label="Mostrar u ocultar menu lateral"
+            aria-label="Mostrar u ocultar menú lateral"
             @click="toggleSidebar"
           >
             <PortalIcon name="menu" />
@@ -84,7 +84,7 @@
             <button
               class="topbar-avatar"
               type="button"
-              aria-label="Abrir menu de usuario"
+              aria-label="Abrir menú de usuario"
               :aria-expanded="String(isUserMenuOpen)"
               @click="toggleUserMenu"
             >
@@ -157,7 +157,7 @@ export default {
     },
     companyStatus() {
       const status = this.$store.state.company?.status
-      return status === 'active' ? 'Active' : (status || 'Pending')
+      return this.$portalT(status === 'active' ? 'status_active' : 'step_status_pending', {}, this.currentLocale)
     },
     activeIntegrationText() {
       const activeTokens = this.$store.state.dashboard?.summary?.active_tokens || 0
@@ -174,30 +174,23 @@ export default {
           ]
         },
         {
-          label: this.$portalT('menu_general', {}, this.currentLocale),
-          items: [
-            { label: this.$portalT('nav_sistema_cliente', {}, this.currentLocale), to: '/panel/sistema-cliente', icon: 'screen' }
-          ]
-        },
-        {
           label: this.$portalT('menu_configuracion', {}, this.currentLocale),
           items: [
-            { label: this.$portalT('nav_configuracion_pagos', {}, this.currentLocale), to: '/panel/configuracion-pagos', icon: 'cog' }
+            { label: this.$portalT('nav_configuracion_pagos', {}, this.currentLocale), to: '/panel/credenciales-api', icon: 'cog' }
           ]
         },
         {
           label: this.$portalT('menu_operacion', {}, this.currentLocale),
           items: [
-            { label: this.$portalT('nav_pagos', {}, this.currentLocale), to: '/panel/pagos', icon: 'wallet' },
-            { label: this.$portalT('nav_pago_facturacion', {}, this.currentLocale), to: '/panel/pago-facturacion', icon: 'grid' },
-            { label: this.$portalT('nav_facturacion', {}, this.currentLocale), to: '/panel/facturacion', icon: 'receipt' },
-            { label: this.$portalT('nav_pagos_cpt', {}, this.currentLocale), to: '/panel/pagos-cpt', icon: 'hash' }
+            { label: this.$portalT('nav_pagos', {}, this.currentLocale), to: '/panel/manifiestos-cn31', icon: 'wallet' },
+            { label: this.$portalT('nav_pago_facturacion', {}, this.currentLocale), to: '/panel/sacas-cn33', icon: 'grid' },
+            { label: this.$portalT('nav_facturacion', {}, this.currentLocale), to: '/panel/estado-paquetes', icon: 'receipt' }
           ]
         },
         {
           label: this.$portalT('menu_integracion', {}, this.currentLocale),
           items: [
-            { label: this.$portalT('nav_pruebas', {}, this.currentLocale), to: '/panel/pruebas-certificacion', icon: 'badge' }
+            { label: this.$portalT('nav_pruebas', {}, this.currentLocale), to: '/panel/control-integracion', icon: 'badge' }
           ]
         }
       ]

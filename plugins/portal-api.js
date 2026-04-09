@@ -42,6 +42,13 @@ export default ({ $config }, inject) => {
         }
       })
     },
+    searchIntegration(token, query) {
+      return request(`/packages/search?q=${encodeURIComponent(query)}`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+    },
     logout(token) {
       return request('/auth/logout', {
         method: 'POST',

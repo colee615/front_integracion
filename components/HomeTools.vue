@@ -6,7 +6,7 @@
           <div class="cb-service-icon" v-html="icons.pin"></div>
           <div>
             <h3>Mapa de Oficinas</h3>
-            <p>Encuentra la oficina de Correos mas cercana a tu ubicacion</p>
+            <p>Encuentra la oficina de Correos más cercana a tu ubicación</p>
           </div>
         </div>
 
@@ -22,7 +22,7 @@
           <div class="cb-service-icon" v-html="icons.calculator"></div>
           <div>
             <h3>Calculadora de Tarifas</h3>
-            <p>Calcula el costo de tu envio de manera rapida</p>
+            <p>Calcula el costo de tu envío de manera rápida</p>
           </div>
         </div>
 

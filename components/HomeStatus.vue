@@ -2,8 +2,8 @@
   <section class="cb-section cb-status">
     <div class="cb-shell cb-status-inner">
       <div class="cb-section-heading">
-        <h2>Estado de tu Envio</h2>
-        <p>Ingresa tu numero de seguimiento para conocer el estado de tu paquete</p>
+        <h2>Estado de tu envío</h2>
+        <p>Ingresa tu número de seguimiento para conocer el estado de tu paquete</p>
       </div>
 
       <div class="cb-status-form">

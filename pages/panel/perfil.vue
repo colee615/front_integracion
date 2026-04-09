@@ -59,7 +59,7 @@
         {{ t('access_security_intro') }}
       </div>
 
-      <button class="portal-button profile-password-toggle" type="button" @click="openPasswordModal">
+      <button class="portal-button portal-button-secondary profile-password-toggle" type="button" @click="openPasswordModal">
         {{ t('change_password') }}
       </button>
     </section>

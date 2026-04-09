@@ -6,7 +6,7 @@
           <span class="cb-top-link__icon" v-html="icons.globe"></span>
           <span class="cb-top-link__text">
             <span class="cb-top-link__light-es">ES</span>
-            <strong>Espanol</strong>
+            <strong>Español</strong>
             <span class="cb-top-link__sep">|</span>
             <span class="cb-top-link__light-us">US</span>
             <strong>English</strong>
@@ -29,7 +29,7 @@
         </button>
         <button type="button" class="cb-top-link">
           <span class="cb-top-link__icon" v-html="icons.login"></span>
-          <span class="cb-top-link__text"><span>Iniciar Sesion</span></span>
+          <span class="cb-top-link__text"><span>Iniciar sesión</span></span>
         </button>
       </div>
     </div>
@@ -41,7 +41,7 @@
         </a>
 
         <nav class="cb-nav-links">
-          <a href="#">¿Quienes somos?</a>
+          <a href="#">¿Quiénes somos?</a>
           <a href="#">Noticias</a>
           <a href="#">Institucional</a>
         </nav>
@@ -51,7 +51,7 @@
             <span class="cb-inline-icon" v-html="icons.search"></span>
             <span>Buscar...</span>
           </button>
-          <button class="cb-menu-btn" type="button" aria-label="Abrir menu">
+          <button class="cb-menu-btn" type="button" aria-label="Abrir menú">
             <span></span>
             <span></span>
             <span></span>

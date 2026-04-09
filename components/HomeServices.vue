@@ -3,7 +3,7 @@
     <div class="cb-shell">
       <div class="cb-section-heading">
         <h2>Servicios Destacados</h2>
-        <p>Soluciones integrales para todas tus necesidades de envio</p>
+        <p>Soluciones integrales para todas tus necesidades de envío</p>
       </div>
 
       <div class="cb-services-grid">

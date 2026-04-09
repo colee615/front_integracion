@@ -33,6 +33,13 @@
             <div class="module-title">{{ $portalT(item.title, {}, currentLocale) }}</div>
           </div>
           <div class="module-description">{{ $portalT(item.description, {}, currentLocale) }}</div>
+          <div v-if="group.isFlow && item.hoverTitle" class="module-flow-popover">
+            <div class="module-flow-popover-title">{{ $portalT(item.hoverTitle, {}, currentLocale) }}</div>
+            <div class="module-flow-popover-text">{{ $portalT(item.hoverDescription, {}, currentLocale) }}</div>
+            <ul class="module-flow-popover-list">
+              <li v-for="detail in item.hoverItems" :key="detail">{{ $portalT(detail, {}, currentLocale) }}</li>
+            </ul>
+          </div>
         </button>
       </div>
     </section>
@@ -67,27 +74,55 @@ export default {
           ]
         },
         {
-          title: 'home_group_general',
-          rowWithNext: true,
-          items: [
-            { title: 'home_card_sistema_title', description: 'home_card_sistema_desc', to: '/panel/sistema-cliente', icon: 'screen' }
-          ]
-        },
-        {
           title: 'home_group_configuracion',
-          rowWithPrevious: true,
           items: [
-            { title: 'home_card_config_title', description: 'home_card_config_desc', to: '/panel/configuracion-pagos', icon: 'cog' }
+            { title: 'home_card_config_title', description: 'home_card_config_desc', to: '/panel/credenciales-api', icon: 'cog' }
           ]
         },
         {
           title: 'home_group_operation',
           isFlow: true,
           items: [
-            { title: 'home_card_cn31_title', description: 'home_card_cn31_desc', to: '/panel/pagos', icon: 'wallet', step: '01' },
-            { title: 'home_card_cn33_title', description: 'home_card_cn33_desc', to: '/panel/pago-facturacion', icon: 'grid', step: '02' },
-            { title: 'home_card_cn22_title', description: 'home_card_cn22_desc', to: '/panel/facturacion', icon: 'receipt', step: '03' },
-            { title: 'home_card_summary_title', description: 'home_card_summary_desc', to: '/panel/pagos-cpt', icon: 'hash', step: '04' }
+            {
+              title: 'home_card_cn31_title',
+              description: 'step_order_1_title',
+              hoverTitle: 'step_order_1_title',
+              hoverDescription: 'step_order_1_desc',
+              hoverItems: ['step_order_1_item_1', 'step_order_1_item_2', 'step_order_1_item_3'],
+              to: '/panel/manifiestos-cn31',
+              icon: 'wallet',
+              step: '01'
+            },
+            {
+              title: 'home_card_cn33_title',
+              description: 'step_order_2_title',
+              hoverTitle: 'step_order_2_title',
+              hoverDescription: 'step_order_2_desc',
+              hoverItems: ['step_order_2_item_1', 'step_order_2_item_2', 'step_order_2_item_3'],
+              to: '/panel/sacas-cn33',
+              icon: 'grid',
+              step: '02'
+            },
+            {
+              title: 'home_card_cn22_title',
+              description: 'step_order_3_title',
+              hoverTitle: 'step_order_3_title',
+              hoverDescription: 'step_order_3_desc',
+              hoverItems: ['step_order_3_item_1', 'step_order_3_item_2', 'step_order_3_item_3'],
+              to: '/panel/estado-paquetes',
+              icon: 'receipt',
+              step: '03'
+            },
+            {
+              title: 'nav_pruebas',
+              description: 'step_order_4_title',
+              hoverTitle: 'step_order_4_title',
+              hoverDescription: 'step_order_4_desc',
+              hoverItems: ['step_order_4_item_1', 'step_order_4_item_2', 'step_order_4_item_3'],
+              to: '/panel/control-integracion',
+              icon: 'badge',
+              step: '04'
+            }
           ]
         }
       ]
